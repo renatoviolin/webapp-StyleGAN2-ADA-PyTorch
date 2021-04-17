@@ -51,7 +51,6 @@ async def process_style(request: Request):
         style_image = form.get('style_image')
         z_start = int(form.get('z_start'))
         z_end = int(form.get('z_end'))
-        print(form)
 
         proj_a = f"{Z_FOLDER}/{source_image.split('.')[0]}.npz"
         proj_b = f"{Z_FOLDER}/{style_image.split('.')[0]}.npz"
@@ -64,8 +63,7 @@ async def process_style(request: Request):
 
         return JSONResponse(status_code=200, content={'image': file_name.split('/')[-1]})
     except Exception as ex:
-        print(ex)
-        logging.info(ex)
+        logging.error(ex)
         return JSONResponse(status_code=400, content={})
 
 
@@ -81,39 +79,5 @@ async def process_generate(request: Request):
 
         return JSONResponse(status_code=200, content={'image': file_name.split('/')[-1]})
     except Exception as ex:
-        print(ex)
-        logging.info(ex)
+        logging.error(ex)
         return JSONResponse(status_code=400, content={})
-
-
-# @app.post('/api/process')
-# async def process(request: Request):
-#     try:
-#         form = await request.form()
-#         source_image = form.get('source_image')
-#         style_image = form.get('style_image')
-#         z_start = form.get('z_start')
-#         z_end = form.get('z_end')
-#         print(form)
-
-#         # name = str(uuid.uuid4()).split('-')[0]
-#         # ext = input_file.filename.split('.')[-1]
-#         # file_name = f'{UPLOAD_FOLDER}/{name}.{ext}'
-#         # with open(file_name, 'wb+') as f:
-#         #     f.write(await input_file.read())
-#         # f.close()
-
-
-#         # img_tensor, img = prepare_image(file_name)
-#         # with torch.no_grad():
-#         #     prediction = model([img_tensor])
-
-#         # img, results = decode_results(img, prediction)
-#         # output_path = f'images/{name}.{ext}'
-#         # cv2.imwrite(output_path, cv2.cvtColor(img, cv2.COLOR_BGR2RGB))
-
-#         # return JSONResponse(status_code=200, content={'output': f'/images/{name}.{ext}', 'result': results})
-#     except Exception as ex:
-#         print(ex)
-#         logging.info(ex)
-#         return JSONResponse(status_code=400, content={})

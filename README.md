@@ -40,12 +40,18 @@ cd web-app
 uvicorn app:app --host 0.0.0.0 --port 8000
 ```
 
+### http://localhost:8000/style
+<img src="screenshot/img1.jpg">
+
+### http://localhost:8000/generate
+<img src="screenshot/img2.jpg">
+
 ## Using another pre-trained model
 You can change the variable `checkpoint_path` in files [api/api_project.py](api/api_project.py) and [api/api_generate.py](api/api_generate.py) and point to the new model. The official pre-trained models are available [here](https://nvlabs-fi-cdn.nvidia.com/stylegan2-ada-pytorch/pretrained/).
 
 
 ## References
-[nvilabs/tylegan2-ada-pytorch](https://github.com/NVlabs/stylegan2-ada-pytorch/)
+[NVILABS/stylegan2-ada-pytorch](https://github.com/NVlabs/stylegan2-ada-pytorch/)
 
 
 ## Citation

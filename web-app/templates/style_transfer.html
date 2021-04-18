@@ -26,25 +26,22 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="row">
-                    <div class="form-group col-md-4">
+                    <div class="form-group col-md-3">
                         <span class="text-center">Source Face</span>
                         <select class="form-select" id="source_image">
                             {% for file, name in zip(z_file, z_name) %}
                             <option value="{{file}}">{{name}}</option>
                             {% endfor %}
                         </select>
-                        <br>
-                        <center><img id="source_preview" width="300px"></center>
+                        
                     </div>
-                    <div class="form-group col-md-4">
+                    <div class="form-group col-md-3">
                         <span class="text-center">Style Face</span>
                         <select class="form-select" id="style_image">
                             {% for file, name in zip(z_file, z_name) %}
                             <option value="{{file}}">{{name}}</option>
                             {% endfor %}
                         </select>
-                        <br>
-                        <center><img id="style_preview" width="300px"></center>
                     </div>
                     <div class="form-group col-md-2">
                         <span class="text-center">Z (0-17)</span>
@@ -57,15 +54,23 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form-group col-md-2">
+                    <div class="form-group col-md-4">
                         <span>&nbsp;</span>
                         <button type="button" class="form-control btn btn-primary btn-block" id="btn-process-style">Process</button>
                     </div>
                 </div>
                 <div class="row" id="result">
-                    <div class="col-md-8">
+                    <div class="col-md-3">
+                        <span>&nbsp;</span>
+                        <center><img id="source_preview" width="200px"></center>
+                    </div>
+                    <div class="col-md-3">
+                        <span>&nbsp;</span>
+                        <center><img id="style_preview" width="200px"></center>
+                    </div>
+                    <div class="col-md-6">
                         <center><span id='label_vector'></span></center>
-                        <center><img id="img_result" width="600px"></center>
+                        <center><img id="img_result" width="500px"></center>
                     </div>
                 </div>
             </div>

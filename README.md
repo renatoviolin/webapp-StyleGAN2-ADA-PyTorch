@@ -8,6 +8,9 @@ This application loads the pre-trained model in [FFHQ dataset](), but there are 
 
 Important Note: this model only runs in <b>CUDA GPU</b> devices. It's not possible to run in <b>CPU</b>.
 
+### Demo
+![Demo](screenshot/demo.gif)
+
 
 ## Overview of the code
 - [api/api_generate.py](api/api_generate.py): code to generate new images from a random seed and perform style transfer between two projected vectors.
@@ -33,7 +36,7 @@ cd Deploying-YOLOv5-fastapi-celery-redis-rabbitmq
 ```bash
 pip install -r requirements.txt
 ```
-
+14
 3. Start web-application
 ```bash
 cd web-app

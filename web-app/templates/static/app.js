@@ -1,4 +1,4 @@
-var URL = 'http://192.168.100.50:8000'
+var URL
 
 $(document).on('change', '#style_image', function () {
     value = $('#style_image').find(":selected").val();
@@ -11,6 +11,7 @@ $(document).on('change', '#source_image', function () {
 })
 
 $(document).ready(function () {
+    URL = prompt('Enter the hostname (without the last backslah)', 'http://localhost:8000')
     $('#source_image').trigger('change')
     $('#style_image').trigger('change')
 
@@ -69,40 +70,4 @@ $(document).ready(function () {
         });
 
     })
-
-
-
-
-    // $('#btn-process').on('click', function () {
-    //     var form_data = new FormData();
-    //     files = $('#input_file').prop('files')
-    //     for (i = 0; i < files.length; i++)
-    //         form_data.append('file', $('#input_file').prop('files')[i]);
-
-    //     form_data.append('z_style', $('#style_target').find(":selected").val())
-    //     form_data.append('z_start', $('#z_start').val())
-    //     form_data.append('z_end', $('#z_end').val())
-    //     $.ajax({
-    //         url: URL + '/api/process',
-    //         type: "post",
-    //         data: form_data,
-    //         enctype: 'multipart/form-data',
-    //         contentType: false,
-    //         processData: false,
-    //         cache: false,
-    //         beforeSend: function () {
-    //             $(".overlay").show()
-    //         },
-    //     }).done(function (jsondata, textStatus, jqXHR) {
-
-    //         console.log(jsondata)
-    //         $(".overlay").hide()
-
-    //     }).fail(function (jsondata, textStatus, jqXHR) {
-    //         console.log(jsondata)
-    //         $(".overlay").hide()
-    //     });
-
-    // })
-
 })

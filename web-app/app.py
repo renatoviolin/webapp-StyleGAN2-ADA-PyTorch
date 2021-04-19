@@ -29,7 +29,7 @@ app.mount("/images", StaticFiles(directory=IMAGES_FOLDER), name="images")
 templates = Jinja2Templates(directory="templates")
 
 
-@app.get("/style", response_class=HTMLResponse)
+@app.get("/", response_class=HTMLResponse)
 async def index(request: Request):
     z_files = sorted(glob.glob(f'{IMAGES_FOLDER}/*.jpg'))
     files = [f.split('/')[-1] for f in z_files]

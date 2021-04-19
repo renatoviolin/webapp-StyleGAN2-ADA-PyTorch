@@ -22,7 +22,7 @@ Important Note: this model only runs in <b>CUDA GPU</b> devices. It's not possib
 | Endpoint | Description
 | --- | ---
 | http://localhost:8000/generate |  Front-end to generate new images from random seed.
-| http://localhost:8000/style |  Front-end to perform style transfer.
+| http://localhost:8000/ |  Front-end to perform style transfer.
 
 
 ## Install
@@ -42,6 +42,10 @@ pip install -r requirements.txt
 cd web-app
 uvicorn app:app --host 0.0.0.0 --port 8000
 ```
+
+## Running on Google Colab
+You can running on colab using ngrok. [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1fVHpgU3OKQtp5_gJ5_aXhx24zg0ba5lQ?usp=sharing)
+
 
 ### http://localhost:8000/style
 <img src="screenshot/img1.jpg">
